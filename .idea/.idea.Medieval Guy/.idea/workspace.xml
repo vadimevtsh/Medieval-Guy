@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb3950e3-0453-401c-9ebe-dd1adc2b90dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppControlServices/Services.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppControlServices/Services.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Initialization.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Samples/Input System/1.7.0/Custom Device/CustomDevice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/Entity.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -76,10 +76,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29808">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29552">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="29808" />
+      <option name="pid" value="29552" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -95,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744217603275</updated>
-      <workItem from="1744217607074" duration="1784000" />
+      <workItem from="1744217607074" duration="3322000" />
     </task>
     <servers />
   </component>
@@ -111,17 +111,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/AppControlServices/InitializationController.cs</url>
-          <line>43</line>
-          <properties documentPath="C:\Programms\Repos\Medieval Guy\Assets\Scripts\AppControlServices\InitializationController.cs" initialLine="43" containingFunctionPresentation="Method 'OnGameSceneLoaded'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/PlayerController.cs</url>
+          <line>34</line>
+          <properties documentPath="C:\Programms\Repos\Medieval Guy\Assets\Scripts\GameContext\Entity\PlayerController.cs" initialLine="34" containingFunctionPresentation="Method 'Update'">
             <startOffsets>
-              <option value="1078" />
+              <option value="953" />
             </startOffsets>
             <endOffsets>
-              <option value="1114" />
+              <option value="1001" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerPrefab: {fileID: 7250783546753170559, guid: 67751eac81a8f0140a7fc3c2cc35037d, type: 3}
+  Input: {fileID: -944628639613478452, guid: 7660c83afeb54094f9e307eaaac43ffd, type: 3}
 --- !u!1 &2041769661
 GameObject:
   m_ObjectHideFlags: 0
