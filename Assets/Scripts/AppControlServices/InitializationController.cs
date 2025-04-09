@@ -22,7 +22,7 @@ public class InitializationController : MonoBehaviour
         StartGameSession();
     }
     
-    private static void StartGameSession(string stateName = null, bool needToReloadScene = true) 
+    private static void StartGameSession(string stateName = null, bool needToReloadScene = false) 
     {
         IsGameStarted = true;
 
