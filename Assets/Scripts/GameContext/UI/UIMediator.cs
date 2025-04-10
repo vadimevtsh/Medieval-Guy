@@ -27,7 +27,7 @@ public class UIMediator : MonoBehaviour
                 PointerEventData pointerData = new PointerEventData(EventSystem.current)
                 {
                     pointerId = -1,
-                };
+                }; 
 
                 pointerData.position = Input.mousePosition;
 

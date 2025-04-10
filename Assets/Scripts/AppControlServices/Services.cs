@@ -2,10 +2,14 @@ using UnityEngine;
 
 public static class Services
 {
-    private static PlayerController PlayerController { get; set;}
+    public static InputController InputController { get; set;}
+    public static PlayerController PlayerController { get; set;}
     
     public static void InitializeCoreSystems()
     {
+        InputController = GetComponentFromScene<InputController>();
+        InputController.Initialize();
+
         PlayerController = GetComponentFromScene<PlayerController>();
         PlayerController.Initialize();
     }
