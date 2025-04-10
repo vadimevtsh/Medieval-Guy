@@ -5,13 +5,14 @@ public class Entity : MonoBehaviour
     private const float PlayerSpeed = 5f;
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Sprite _defaultSprite;
     [SerializeField] private Sprite _leftSprite;
     [SerializeField] private Sprite _rightSprite;
     
     public Vector3 Direction { get; set; }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (Direction.x < 0)
         {
@@ -26,7 +27,6 @@ public class Entity : MonoBehaviour
             _spriteRenderer.sprite = _defaultSprite;
         }
         
-        
-        transform.position += Direction * PlayerSpeed * Time.deltaTime;
+        _rigidbody.MovePosition(_rigidbody.position + (Vector2)Direction.normalized * PlayerSpeed * Time.fixedDeltaTime);
     }
 }
