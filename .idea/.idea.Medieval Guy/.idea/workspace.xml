@@ -9,8 +9,12 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainCharacter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainCharacter.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameContext/Input/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameContext/Input/InputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character 2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Left.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character-Left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Left.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character-Left.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Right.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character-Right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Right.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character-Right.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +116,7 @@
       <updated>1744217603275</updated>
       <workItem from="1744217607074" duration="4554000" />
       <workItem from="1744227571155" duration="5529000" />
-      <workItem from="1744325222307" duration="2740000" />
+      <workItem from="1744325222307" duration="4250000" />
     </task>
     <servers />
   </component>
