@@ -62,6 +62,15 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shift"",
+                    ""type"": ""Button"",
+                    ""id"": ""359f36d0-4f3e-416e-83d2-a6a2391c0e81"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -108,6 +117,17 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
                     ""action"": ""MoveRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2f083df-3f7b-40a6-b353-6eb573d48e1b"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -120,6 +140,7 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
         m_GameplayMap_MoveDown = m_GameplayMap.FindAction("MoveDown", throwIfNotFound: true);
         m_GameplayMap_MoveLeft = m_GameplayMap.FindAction("MoveLeft", throwIfNotFound: true);
         m_GameplayMap_MoveRight = m_GameplayMap.FindAction("MoveRight", throwIfNotFound: true);
+        m_GameplayMap_Shift = m_GameplayMap.FindAction("Shift", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,6 +206,7 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_GameplayMap_MoveDown;
     private readonly InputAction m_GameplayMap_MoveLeft;
     private readonly InputAction m_GameplayMap_MoveRight;
+    private readonly InputAction m_GameplayMap_Shift;
     public struct GameplayMapActions
     {
         private @CustomInputMap m_Wrapper;
@@ -193,6 +215,7 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
         public InputAction @MoveDown => m_Wrapper.m_GameplayMap_MoveDown;
         public InputAction @MoveLeft => m_Wrapper.m_GameplayMap_MoveLeft;
         public InputAction @MoveRight => m_Wrapper.m_GameplayMap_MoveRight;
+        public InputAction @Shift => m_Wrapper.m_GameplayMap_Shift;
         public InputActionMap Get() { return m_Wrapper.m_GameplayMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +237,9 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
             @MoveRight.started += instance.OnMoveRight;
             @MoveRight.performed += instance.OnMoveRight;
             @MoveRight.canceled += instance.OnMoveRight;
+            @Shift.started += instance.OnShift;
+            @Shift.performed += instance.OnShift;
+            @Shift.canceled += instance.OnShift;
         }
 
         private void UnregisterCallbacks(IGameplayMapActions instance)
@@ -230,6 +256,9 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
             @MoveRight.started -= instance.OnMoveRight;
             @MoveRight.performed -= instance.OnMoveRight;
             @MoveRight.canceled -= instance.OnMoveRight;
+            @Shift.started -= instance.OnShift;
+            @Shift.performed -= instance.OnShift;
+            @Shift.canceled -= instance.OnShift;
         }
 
         public void RemoveCallbacks(IGameplayMapActions instance)
@@ -253,5 +282,6 @@ public partial class @CustomInputMap: IInputActionCollection2, IDisposable
         void OnMoveDown(InputAction.CallbackContext context);
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnMoveRight(InputAction.CallbackContext context);
+        void OnShift(InputAction.CallbackContext context);
     }
 }

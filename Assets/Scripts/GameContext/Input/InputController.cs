@@ -5,7 +5,7 @@ public class InputController : MonoBehaviour
 {
     private const string GameplayMap = "GameplayMap";
     
-    [SerializeField] private InputActionAsset Input;
+    [SerializeField] private InputActionAsset _input;
 
     private bool _isInitialized = true;
     
@@ -13,6 +13,7 @@ public class InputController : MonoBehaviour
     private InputAction _moveDownAction;
     private InputAction _moveLeftAction;
     private InputAction _moveRightAction;
+    private InputAction _shiftAction;
 
     private Vector3 _movementDirection = Vector2.zero;
 
@@ -20,12 +21,13 @@ public class InputController : MonoBehaviour
     
     public void Initialize()
     {
-        Input.FindActionMap(GameplayMap).Enable();
+        _input.FindActionMap(GameplayMap).Enable();
         
-        _moveUpAction = Input.FindAction("MoveUp");
-        _moveDownAction = Input.FindAction("MoveDown");
-        _moveLeftAction = Input.FindAction("MoveLeft");
-        _moveRightAction = Input.FindAction("MoveRight");
+        _moveUpAction = _input.FindAction("MoveUp");
+        _moveDownAction = _input.FindAction("MoveDown");
+        _moveLeftAction = _input.FindAction("MoveLeft");
+        _moveRightAction = _input.FindAction("MoveRight");
+        _shiftAction = _input.FindAction("Shift");
 
         _isInitialized = true;
     }
@@ -46,11 +48,11 @@ public class InputController : MonoBehaviour
         {
             _movementDirection.y = 0;
         }
-        if (isMoveUp)
+        else if (isMoveUp)
         {
             _movementDirection.y = 1;
         }
-        if (isMoveDown)
+        else if (isMoveDown)
         {
             _movementDirection.y = -1;
         }
@@ -59,11 +61,11 @@ public class InputController : MonoBehaviour
         {
             _movementDirection.x = 0;
         }
-        if (isMoveLeft)
+        else if (isMoveLeft)
         {
             _movementDirection.x = -1;
         }
-        if (isMoveRight)
+        else if (isMoveRight)
         {
             _movementDirection.x = 1;
         }
@@ -71,5 +73,10 @@ public class InputController : MonoBehaviour
         PlayerController.SetInput(_movementDirection);
         
         _movementDirection = Vector3.zero;
+    }
+
+    public bool GetShiftHeld()
+    {
+        return _shiftAction.IsPressed();
     }
 }

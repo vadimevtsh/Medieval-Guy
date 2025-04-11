@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    private const float PlayerSpeed = 5f;
+    private const float PlayerSpeed = 2.5f;
+    private const float IncreasedPlayerSpeed = 5f;
 
     private static Vector2 DefaultColliderSize = new Vector2(0.28f, 0.28f);
     private static Vector2 SideColliderSize = new Vector2(0.2f, 0.28f);
@@ -15,6 +16,8 @@ public class Entity : MonoBehaviour
     [SerializeField] private Sprite _rightSprite;
     
     public Vector3 Direction { get; set; }
+
+    private InputController InputController => Services.InputController;
 
     public void FixedUpdate()
     {
@@ -33,7 +36,8 @@ public class Entity : MonoBehaviour
             _spriteRenderer.sprite = _defaultSprite;
             _boxCollider2D.size = DefaultColliderSize;
         }
-        
-        _rigidbody.MovePosition(_rigidbody.position + (Vector2)Direction.normalized * PlayerSpeed * Time.fixedDeltaTime);
+
+        var speed = InputController.GetShiftHeld() ? IncreasedPlayerSpeed : PlayerSpeed;
+        _rigidbody.MovePosition(_rigidbody.position + (Vector2)Direction.normalized * speed * Time.fixedDeltaTime);
     }
 }
