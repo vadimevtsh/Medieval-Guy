@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Player _playerPrefab;
+    private const string PlayerPrefabName = "MainCharacter";
 
     private bool _isInitialized;
     
-    public Player Player { get; private set; }
+    private Player Player { get; set; }
+
+    private PrefabProvider PrefabProvider => Services.PrefabProvider; 
     
     public void Initialize()
     {
         if (Player == null)
         {
-            Player = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, transform);
+            var playerPrefab = PrefabProvider.Get(PlayerPrefabName).GetComponent<Player>();
+            Player = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity, transform);
         }
 
         _isInitialized = true;
