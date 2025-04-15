@@ -16,10 +16,6 @@ public class InventoryOverlay : UITogglableOverlay
         base.Initialize();
 
         InventoryController.InventoryChanged += Synchronize;
-        
-        InventoryController.AddItem("0");
-        InventoryController.AddItem("0");
-        InventoryController.AddItem("0");
     }
     
     private void OnDestroy()

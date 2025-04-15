@@ -391,6 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _requiredCanvases:
   - {fileID: 8247859352035903872, guid: 8c5c669c41cd5da43adf18c4ff84d953, type: 3}
+  - {fileID: 8233255279725027947, guid: 9eb75336dde2e6f4aaf3dc908f6a3177, type: 3}
 --- !u!1 &1136651580
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +496,7 @@ GameObject:
   - component: {fileID: 1461035811}
   - component: {fileID: 1461035812}
   - component: {fileID: 1461035813}
+  - component: {fileID: 1461035814}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -539,6 +541,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c1b3a0ce3c61e429b03a9d44e219c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1461035814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461035810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c787f1b61c38584ba7756e62ade4d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1477148864
@@ -745,6 +759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2135821866}
   - component: {fileID: 2135821865}
+  - component: {fileID: 2135821867}
   m_Layer: 0
   m_Name: JAVA-NEW
   m_TagString: Untagged
@@ -819,6 +834,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2135821867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135821864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2e8314a5fec6440a9a1d564af5cf5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isInteractableOnce: 1
+  Id: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

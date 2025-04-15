@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
     private const string PlayerPrefabName = "MainCharacter";
 
     private bool _isInitialized;
+
+    public Vector3 PlayerPosition => Player.transform.position;
     
     private Player Player { get; set; }
 

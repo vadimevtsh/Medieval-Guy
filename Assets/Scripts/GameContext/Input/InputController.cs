@@ -14,6 +14,7 @@ public class InputController : MonoBehaviour
     private InputAction _moveLeftAction;
     private InputAction _moveRightAction;
     private InputAction _shiftAction;
+    private InputAction _interactAction;
 
     private Vector3 _movementDirection = Vector2.zero;
 
@@ -28,6 +29,7 @@ public class InputController : MonoBehaviour
         _moveLeftAction = _input.FindAction("MoveLeft");
         _moveRightAction = _input.FindAction("MoveRight");
         _shiftAction = _input.FindAction("Shift");
+        _interactAction = _input.FindAction("Interact");
 
         _isInitialized = true;
     }
@@ -78,5 +80,10 @@ public class InputController : MonoBehaviour
     public bool GetShiftHeld()
     {
         return _shiftAction.IsPressed();
+    }
+
+    public bool GetInteractClicked()
+    {
+        return _interactAction.WasPerformedThisFrame();
     }
 }

@@ -20,7 +20,7 @@ public class OverlayMediator : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
+    public void Initialize()
     {
         InitializeUI();
     }
