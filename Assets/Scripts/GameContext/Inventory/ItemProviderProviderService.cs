@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FactoryObjectLibrary", menuName = "FutureGame/Factory/FactoryObjectLibrary")]
-
 public class ItemProviderProviderService : IItemProviderService
 {
     private ItemLibrary _itemLibrary;

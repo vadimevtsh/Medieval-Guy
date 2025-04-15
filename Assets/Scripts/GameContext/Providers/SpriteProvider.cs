@@ -5,10 +5,10 @@ public class SpriteProvider : MonoBehaviour
 {
     private const string ItemFolderPath = "Session/Sprites";
     
-    private Dictionary<string, GameObject> _sprites;
-    private GameObject _defaultSprite;
+    private Dictionary<string, Sprite> _sprites;
+    private Sprite _defaultSprite;
 
-    public GameObject Get(string spriteName)
+    public Sprite Get(string spriteName)
     {
         if (spriteName == null)
         {
@@ -26,9 +26,9 @@ public class SpriteProvider : MonoBehaviour
 
     private void LoadSprites()
     {
-        _sprites = new Dictionary<string, GameObject>(80);
+        _sprites = new Dictionary<string, Sprite>(80);
 
-        var sprites = Resources.LoadAll<GameObject>(ItemFolderPath);
+        var sprites = Resources.LoadAll<Sprite>(ItemFolderPath);
 
         foreach (var icon in sprites)
         {
