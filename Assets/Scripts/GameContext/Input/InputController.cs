@@ -17,7 +17,8 @@ public class InputController : MonoBehaviour
 
     private Vector3 _movementDirection = Vector2.zero;
 
-    private static PlayerController PlayerController => Services.PlayerController;
+    private PlayerController PlayerController => Services.PlayerController;
+    private ConfigurationService ConfigurationService => Services.Configuration;
     
     public void Initialize()
     {

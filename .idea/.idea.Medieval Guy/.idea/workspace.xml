@@ -6,28 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="eb3950e3-0453-401c-9ebe-dd1adc2b90dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Medieval Guy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Medieval Guy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainCharacter.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainCharacter.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AppControlServices/Services.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AppControlServices/Services.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character 2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Left.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character-Right.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Inventory 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Inventory 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Inventory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Inventory.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/JAVA-NEW.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/JAVA-NEW.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/board.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/board.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/yabloko.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/yabloko.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameContext/Input/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameContext/Input/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +21,20 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Samples/Input System/1.7.0/Custom Device/CustomDevice.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppControlServices/Configuration/ConfigurationGroupProxy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppControlServices/Configuration/ConfigurationLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppControlServices/Configuration/ConfigurationProxy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppControlServices/Configuration/ConfigurationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppControlServices/Configuration/IConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AppControlServices/Configuration/IConfigurationLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/Entity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Inventory/IItemProviderService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Inventory/InventoryController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Inventory/InventoryOverlay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Inventory/ItemConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Inventory/ItemLibrary.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Inventory/ItemProviderProviderService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/Providers/PrefabProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/UI/CanvasFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/UI/ISelectionRequiredMenu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -53,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameContext/UI/UITogglableOverlay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a05f37d7a0a34fad9547811820ecb7447c00/31/9741973b/Input.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7237cf7abef49bfbb552d7eb076e422174200/52/1ca7a64e/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -133,7 +127,7 @@
       <workItem from="1744227571155" duration="5529000" />
       <workItem from="1744325222307" duration="4250000" />
       <workItem from="1744398709769" duration="2775000" />
-      <workItem from="1744665076063" duration="1233000" />
+      <workItem from="1744665076063" duration="10054000" />
     </task>
     <servers />
   </component>
@@ -144,5 +138,50 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameContext/Entity/PlayerController.cs</url>
+          <line>17</line>
+          <properties documentPath="C:\Programms\Repos\Medieval Guy\Assets\Scripts\GameContext\Entity\PlayerController.cs" initialLine="17" containingFunctionPresentation="Method 'Initialize'">
+            <startOffsets>
+              <option value="462" />
+            </startOffsets>
+            <endOffsets>
+              <option value="543" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameContext/Providers/PrefabProvider.cs</url>
+          <line>23</line>
+          <properties documentPath="C:\Programms\Repos\Medieval Guy\Assets\Scripts\GameContext\Providers\PrefabProvider.cs" initialLine="23" containingFunctionPresentation="Method 'Get'">
+            <startOffsets>
+              <option value="571" />
+            </startOffsets>
+            <endOffsets>
+              <option value="651" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameContext/Input/InputController.cs</url>
+          <line>34</line>
+          <properties documentPath="C:\Programms\Repos\Medieval Guy\Assets\Scripts\GameContext\Input\InputController.cs" initialLine="34" containingFunctionPresentation="Method 'Initialize'">
+            <startOffsets>
+              <option value="1132" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1154" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
