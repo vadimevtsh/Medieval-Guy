@@ -29,10 +29,11 @@ public class InventoryOverlay : UITogglableOverlay
     
     private void Synchronize()
     {
+        var items = InventoryController.CurrentItems;
         for (int i = _inventoryItems.Count - 1; i >= 0; i --)
         {
             var inventoryItem = _inventoryItems[i];
-            var sameItem = _inventoryItems.FirstOrDefault(i => i.ItemConfiguration == inventoryItem.ItemConfiguration);
+            var sameItem = items.FirstOrDefault(itemState => itemState == inventoryItem.ItemState);
             if (sameItem != null)
             {
                 continue;
@@ -41,11 +42,10 @@ public class InventoryOverlay : UITogglableOverlay
             _inventoryItems.Remove(inventoryItem);
             Destroy(inventoryItem.gameObject);
         }
-
-        var items = InventoryController.CurrentItems;
+        
         foreach (var item in items)
         {
-            var sameItem = _inventoryItems.FirstOrDefault(i => i.ItemConfiguration == item);
+            var sameItem = _inventoryItems.FirstOrDefault(i => i.ItemState == item);
             if (sameItem != null)
             {
                 continue;
@@ -54,6 +54,8 @@ public class InventoryOverlay : UITogglableOverlay
             var prefab = PrefabProvider.Get("InventoryItem").GetComponent<InventoryItemUI>();
             var newItem = Instantiate(prefab, _itemsParent);
             newItem.Initialize(item);
+            
+            _inventoryItems.Add(newItem);
         }
     }
 }

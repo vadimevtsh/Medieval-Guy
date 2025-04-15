@@ -5,13 +5,13 @@ public class InventoryItemUI : MonoBehaviour
 {
     [SerializeField] private Image _image;
     
-    public ItemConfiguration ItemConfiguration { get; private set; }
+    public ItemState ItemState { get; private set; }
 
     private SpriteProvider SpriteProvider => Services.SpriteProvider;
 
-    public void Initialize(ItemConfiguration itemConfiguration)
+    public void Initialize(ItemState itemState)
     {
-        ItemConfiguration = itemConfiguration;
-        _image.sprite = SpriteProvider.Get(itemConfiguration.IconName);
+        ItemState = itemState;
+        _image.sprite = SpriteProvider.Get(itemState.Configuration.IconName);
     }
 }

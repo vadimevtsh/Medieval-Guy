@@ -7,7 +7,7 @@ public class InventoryController : MonoBehaviour
 {
     private ConfigurationService ConfigurationService => Services.Configuration;
 
-    public List<ItemConfiguration> CurrentItems { get; set; } = new List<ItemConfiguration>();
+    public List<ItemState> CurrentItems { get; set; } = new List<ItemState>();
 
     public event Action InventoryChanged;
 
@@ -17,7 +17,9 @@ public class InventoryController : MonoBehaviour
 
     public void AddItem(string itemId)
     {
-        var item = ConfigurationService.ItemProviderService.GetAll().FirstOrDefault(i => i.Id == itemId);
+        var itemConfiguration = ConfigurationService.ItemProviderService.GetAll().FirstOrDefault(i => i.Id == itemId);
+        var item = new ItemState();
+        item.Initialize(itemConfiguration, CurrentItems.Count - 1);
         
         CurrentItems.Add(item);
         
