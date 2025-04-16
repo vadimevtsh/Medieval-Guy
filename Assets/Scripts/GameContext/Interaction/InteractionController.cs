@@ -38,6 +38,11 @@ public class InteractionController : MonoBehaviour
         var closestDistance = Mathf.Infinity;
         foreach (var interactable in _interactables)
         {
+            if (!interactable.CanInteract())
+            {
+                continue;
+            }
+            
             var distance = Vector3.Distance(interactable.Position, playerPosition);
             if (distance > InteractionRange)
             {

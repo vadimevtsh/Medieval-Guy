@@ -33,9 +33,11 @@ public class QuestController : MonoBehaviour
         }
 
         quest.IsStarted = true;
+
+        CheckQuestsCompletion();
     }
 
-    public void CheckQuestsCompletion()
+    private void CheckQuestsCompletion()
     {
         foreach (var quest in CurrentQuests)
         {
@@ -44,7 +46,7 @@ public class QuestController : MonoBehaviour
             foreach (var requirement in requirements)
             {
                 var itemsCount = InventoryController.CurrentItems.Count(i => i.Configuration.Id == requirement.Id);
-                if (itemsCount < 0)
+                if (itemsCount < requirement.Quantity)
                 {
                     continue;
                 }
@@ -76,5 +78,15 @@ public class QuestController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StartRandomQuest()
+    {
+        var firstQuest = AvailableQuests.FirstOrDefault();
+        if (firstQuest == null)
+        {
+            return;
+        }
+        StartQuest(firstQuest.QuestConfiguration.Id);
     }
 }

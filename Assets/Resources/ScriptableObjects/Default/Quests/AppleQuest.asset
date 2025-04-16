@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3288241b6dd9831408acdbda5b299527, type: 3}
-  m_Name: QuestsLibrary
+  m_Script: {fileID: 11500000, guid: b3321c36bfb56474e8aef7a4d927b052, type: 3}
+  m_Name: AppleQuest
   m_EditorClassIdentifier: 
-  QuestsData:
-  - {fileID: 11400000, guid: 434f16f22f616c240bc25920f2a12126, type: 2}
-  - {fileID: 11400000, guid: bde8bfee438ceb54bb81aa35c821161a, type: 2}
+  Id: 1
+  Requirements:
+  - Id: 1
+    Quantity: 3
+  Rewards:
+  - Id: 0
+    Quantity: 5

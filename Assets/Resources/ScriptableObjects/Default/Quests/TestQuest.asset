@@ -17,5 +17,5 @@ MonoBehaviour:
   - Id: 0
     Quantity: 2
   Rewards:
-  - Id: 0
+  - Id: 1
     Quantity: 3
