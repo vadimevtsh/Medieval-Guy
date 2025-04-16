@@ -15,6 +15,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
     public static List<string> OverridesVariants => _overridesVariants;
 
     public ConfigurationGroupProxy<ItemConfiguration> ItemGroup { get; private set; }
+    public ConfigurationGroupProxy<QuestConfiguration> QuestGroup { get; private set; }
     
     public ConfigurationLoader() 
     {
@@ -40,6 +41,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
         LoadConfiguration<IConfiguration>(defaultConfigPath);
 
         ItemGroup = new ConfigurationGroupProxy<ItemConfiguration>(RootConfigurationPath, DefaultConfigurationPath, "Items");
+        QuestGroup = new ConfigurationGroupProxy<QuestConfiguration>(RootConfigurationPath, DefaultConfigurationPath, "Quests");
     }
   
     public void InitializeOverride(string overrideConfigurationPath) 
@@ -48,6 +50,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
         LoadConfiguration<IConfiguration>(overridenPath);
 
         ItemGroup.LoadOverride(overrideConfigurationPath);
+        QuestGroup.LoadOverride(overrideConfigurationPath);
     }
 
     public T Get<T>() where T : IConfiguration 

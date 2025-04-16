@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
-    private const float InteractionRange = 1f;
+    private const float InteractionRange = 0.5f;
     private const string InteractionPromptPrefabName = "InteractionPrompt";
 
     private GameObject InteractionPrompt;
@@ -54,9 +54,8 @@ public class InteractionController : MonoBehaviour
         if (nearestInteractable != null)
         {
             InteractionPrompt.SetActive(true);
-            var mainCamera = Camera.main;
-            var position = mainCamera.WorldToScreenPoint(nearestInteractable.Position);
-            InteractionPrompt.transform.position = position + new Vector3(0, 40f, 0f);
+            var position = Camera.main.WorldToScreenPoint(nearestInteractable.Position + new Vector3(0, 0.3f, 0f));
+            InteractionPrompt.transform.position = position;
             
             if (InputController.GetInteractClicked())
             {

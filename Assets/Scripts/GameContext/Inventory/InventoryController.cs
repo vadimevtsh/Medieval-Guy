@@ -25,5 +25,18 @@ public class InventoryController : MonoBehaviour
         
         InventoryChanged?.Invoke();
     }
+
+    public void RemoveItem(string itemId)
+    {
+        var item = CurrentItems.FirstOrDefault(i => i.Configuration.Id == itemId);
+        if (item == null)
+        {
+            return;
+        }
+
+        CurrentItems.Remove(item);
+        
+        InventoryChanged?.Invoke();
+    }
 }
 

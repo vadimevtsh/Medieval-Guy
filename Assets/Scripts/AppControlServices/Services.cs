@@ -11,6 +11,7 @@ public static class Services
     public static InteractionController InteractionController { get; private set; }
     public static WorldOverlayCanvas WorldOverlayCanvas { get; private set; }
     public static OverlayMediator OverlayMediator { get; private set; }
+    public static QuestController QuestController { get; private set; }
     
     public static void InitializeCoreSystems()
     {
@@ -36,6 +37,9 @@ public static class Services
 
         PlayerController = GetComponentFromScene<PlayerController>();
         PlayerController.Initialize();
+
+        QuestController = GetComponentFromScene<QuestController>();
+        QuestController.Initialize();
     }
     
     private static T GetComponentFromScene<T>() where T : Object 

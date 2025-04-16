@@ -1,6 +1,7 @@
 public class ConfigurationService
 {
-    public IItemProviderService ItemProviderService { get; private set; } = new ItemProviderProviderService();
+    public IItemProviderService ItemProviderService { get; private set; } = new ItemProviderService();
+    public IQuestProviderService QuestProviderService { get; private set; } = new QuestProviderService();
     
     private IConfigurationLoader Loader { get; set; } = new ConfigurationLoader();
     
@@ -13,5 +14,6 @@ public class ConfigurationService
         }
         
         ItemProviderService.Initialize(Loader);
+        QuestProviderService.Initialize(Loader);
     }
 }

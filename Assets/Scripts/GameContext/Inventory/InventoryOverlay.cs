@@ -5,11 +5,11 @@ using UnityEngine;
 public class InventoryOverlay : UITogglableOverlay
 {
     [SerializeField] private Transform _itemsParent;
+    [SerializeField] private InventoryItemUI _inventoryItemPrefab;
     
     private List<InventoryItemUI> _inventoryItems = new List<InventoryItemUI>();
 
     private InventoryController InventoryController => Services.InventoryController;
-    private PrefabProvider PrefabProvider => Services.PrefabProvider;
     
     public override void Initialize()
     {
@@ -46,9 +46,8 @@ public class InventoryOverlay : UITogglableOverlay
             {
                 continue;
             }
-
-            var prefab = PrefabProvider.Get("InventoryItem").GetComponent<InventoryItemUI>();
-            var newItem = Instantiate(prefab, _itemsParent);
+                
+            var newItem = Instantiate(_inventoryItemPrefab, _itemsParent);
             newItem.Initialize(item);
             
             _inventoryItems.Add(newItem);
