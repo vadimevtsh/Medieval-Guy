@@ -1,10 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class EntityMediator : MonoBehaviour
 {
+    private static Vector3 Offset = new(0, 0.05f, 0);
+    
     [SerializeField] private EntityObject _entityPrefab;
     [SerializeField] private List<Transform> _entityPositions;
     
@@ -36,7 +37,7 @@ public class EntityMediator : MonoBehaviour
             if (sameEntity == null)
             {
                 var entityObject = Instantiate(_entityPrefab);
-                entityObject.gameObject.transform.position = _entityPositions[entity.SlotIndex].position;
+                entityObject.gameObject.transform.position = _entityPositions[entity.SlotIndex].position + Offset;
                 entityObject.Initialize(entity);
                 
                 _activeEntities.Add(entityObject);

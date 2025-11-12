@@ -14,10 +14,6 @@ public class EntityController : MonoBehaviour
     
     public void Initialize()
     {
-        var configuration = EntityConfiguration.GetAll();
-        AddPlayerEntity(configuration.FirstOrDefault(c => c.Id == "Warrior"), PlayerEntities.Count);
-        AddPlayerEntity(configuration.FirstOrDefault(c => c.Id == "Warrior"), PlayerEntities.Count);
-        AddPlayerEntity(configuration.FirstOrDefault(c => c.Id == "Warrior"), PlayerEntities.Count);
     }
     
     public void Update()
@@ -33,10 +29,16 @@ public class EntityController : MonoBehaviour
         }
     }
 
-    public void AddPlayerEntity(EntityConfiguration entity, int slotIndex)
+    public void AddPlayerEntity(string id, int slotIndex)
+    {
+        var configuration = EntityConfiguration.GetAll().FirstOrDefault(c => c.Id == id);
+        AddPlayerEntity(configuration, slotIndex);
+    }
+
+    public void AddPlayerEntity(EntityConfiguration entityConfiguration, int slotIndex)
     {
         var newEntity = new Entity();
-        newEntity.Initialize(entity, slotIndex);
+        newEntity.Initialize(entityConfiguration, slotIndex);
         PlayerEntities.Add(newEntity);
         
         PlayerEntitiesChanged?.Invoke();
