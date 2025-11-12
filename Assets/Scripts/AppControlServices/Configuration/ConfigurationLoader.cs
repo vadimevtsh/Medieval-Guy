@@ -13,9 +13,8 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
 
     public static string DefaultConfigPath => DefaultConfigurationPath;
     public static List<string> OverridesVariants => _overridesVariants;
-
-    public ConfigurationGroupProxy<ItemConfiguration> ItemGroup { get; private set; }
-    public ConfigurationGroupProxy<QuestConfiguration> QuestGroup { get; private set; }
+    
+    public ConfigurationGroupProxy<EntityConfiguration> EntityGroup { get; private set; }
     
     public ConfigurationLoader() 
     {
@@ -40,8 +39,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
         var defaultConfigPath = Path.Combine(RootConfigurationPath, DefaultConfigurationPath);
         LoadConfiguration<IConfiguration>(defaultConfigPath);
 
-        ItemGroup = new ConfigurationGroupProxy<ItemConfiguration>(RootConfigurationPath, DefaultConfigurationPath, "Items");
-        QuestGroup = new ConfigurationGroupProxy<QuestConfiguration>(RootConfigurationPath, DefaultConfigurationPath, "Quests");
+        EntityGroup = new ConfigurationGroupProxy<EntityConfiguration>(RootConfigurationPath, DefaultConfigurationPath, "Entities");
     }
   
     public void InitializeOverride(string overrideConfigurationPath) 
@@ -49,8 +47,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
         var overridenPath = Path.Combine(RootConfigurationPath, overrideConfigurationPath);
         LoadConfiguration<IConfiguration>(overridenPath);
 
-        ItemGroup.LoadOverride(overrideConfigurationPath);
-        QuestGroup.LoadOverride(overrideConfigurationPath);
+        EntityGroup.LoadOverride(overrideConfigurationPath);
     }
 
     public T Get<T>() where T : IConfiguration 

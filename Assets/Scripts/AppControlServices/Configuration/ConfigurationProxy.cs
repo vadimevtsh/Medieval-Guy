@@ -23,7 +23,7 @@ public class ConfigurationProxy
         var allScriptables = Resources.LoadAll(configurationPath);
         foreach (var file in allScriptables) 
         {
-            if (!(file is T configuration)) 
+            if (file is not T configuration) 
             {
                 continue;
             }

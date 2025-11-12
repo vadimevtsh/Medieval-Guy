@@ -1,7 +1,6 @@
 public class ConfigurationService
 {
-    public IItemProviderService ItemProviderService { get; private set; } = new ItemProviderService();
-    public IQuestProviderService QuestProviderService { get; private set; } = new QuestProviderService();
+    public IEntityProviderService EntityProviderService { get; private set; } = new EntityProviderService();
     
     private IConfigurationLoader Loader { get; set; } = new ConfigurationLoader();
     
@@ -13,7 +12,6 @@ public class ConfigurationService
             Loader.InitializeOverride(overidePath);
         }
         
-        ItemProviderService.Initialize(Loader);
-        QuestProviderService.Initialize(Loader);
+        EntityProviderService.Initialize(Loader);
     }
 }
