@@ -4,6 +4,7 @@ public class Entity
     
     public EntityConfiguration Configuration { get; private set;}
     public int SlotIndex { get; private set; }
+    public float NormalizedActionValue => _actionTime / PerformActionTime;
 
     private float _actionTime = 0f;
 

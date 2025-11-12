@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,9 +10,11 @@ public class EntityMediator : MonoBehaviour
     [SerializeField] private EntityObject _entityPrefab;
     [SerializeField] private List<Transform> _entityPositions;
     
+    public readonly List<EntityObject> PlayerEntities = new();
+    
     private EntityController EntityController => Services.EntityController;
 
-    private readonly List<EntityObject> _activeEntities = new();
+    public event Action EntitiesChanged;
     
     public void Initialize()
     {
@@ -20,28 +23,30 @@ public class EntityMediator : MonoBehaviour
 
     private void Synchronize()
     {
-        for (int i = _activeEntities.Count - 1; i >= 0; i--)
+        for (int i = PlayerEntities.Count - 1; i >= 0; i--)
         {
-            var entity = _activeEntities[i];
+            var entity = PlayerEntities[i];
             var sameEntity = EntityController.PlayerEntities.FirstOrDefault(e => e == entity.Entity);
             if (sameEntity == null)
             {
-                _activeEntities.Remove(entity);
+                PlayerEntities.Remove(entity);
                 Destroy(entity);
             }
         }
 
         foreach (var entity in EntityController.PlayerEntities)
         {
-            var sameEntity = _activeEntities.FirstOrDefault(e => e.Entity == entity);
+            var sameEntity = PlayerEntities.FirstOrDefault(e => e.Entity == entity);
             if (sameEntity == null)
             {
                 var entityObject = Instantiate(_entityPrefab);
                 entityObject.gameObject.transform.position = _entityPositions[entity.SlotIndex].position + Offset;
                 entityObject.Initialize(entity);
                 
-                _activeEntities.Add(entityObject);
+                PlayerEntities.Add(entityObject);
             }
         }
+        
+        EntitiesChanged?.Invoke();
     }
 }

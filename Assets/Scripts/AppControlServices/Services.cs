@@ -9,24 +9,27 @@ public static class Services
     public static EntityController EntityController { get; private set; }
     public static EntityMediator EntityMediator { get; private set; }
     public static ConfigurationService Configuration { get; private set; }
+    public static CameraService CameraService { get; private set; }
     
     public static void InitializeCoreSystems()
     {
+        CameraService = GetComponentFromScene<CameraService>();
+        
         Configuration = new ConfigurationService();
         Configuration.Initialize(false, string.Empty);
         
         PrefabProvider = GetComponentFromScene<PrefabProvider>();
         SpriteProvider = GetComponentFromScene<SpriteProvider>();
         
-        OverlayMediator = GetComponentFromScene<OverlayMediator>();
-        OverlayMediator.Initialize();
-        
-        WorldOverlayCanvas = GetComponentFromScene<WorldOverlayCanvas>();
-
         EntityController = GetComponentFromScene<EntityController>();
         EntityMediator = GetComponentFromScene<EntityMediator>();
         EntityMediator.Initialize();
         EntityController.Initialize();
+        
+        OverlayMediator = GetComponentFromScene<OverlayMediator>();
+        OverlayMediator.Initialize();
+        
+        WorldOverlayCanvas = GetComponentFromScene<WorldOverlayCanvas>();
     }
     
     private static T GetComponentFromScene<T>() where T : Object 
