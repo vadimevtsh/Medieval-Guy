@@ -9,15 +9,19 @@ public class Entity : IStatProvider
     private float _actionTime;
     private float _currentHealth;
     
+    private IEnumerable<BaseActionConfiguration> _possibleActions;
+    
     public EntityConfiguration Configuration { get; private set;}
     public int SlotIndex { get; private set; }
     public float NormalizedActionValue => _actionTime / PerformActionTime;
     public float NormalizedHealth => _currentHealth / GetStat(StatType.MaxHealth);
+    public EntityController EntityController => Services.EntityController;
 
     public void Initialize(EntityConfiguration configuration, int slotIndex)
     {
         Configuration = configuration;
         SlotIndex = slotIndex;
+        _possibleActions = Services.Configuration.ActionProviderService.GetAll();
         
         _currentHealth = GetStat(StatType.MaxHealth);
     }
@@ -55,8 +59,20 @@ public class Entity : IStatProvider
         }
     }
 
+    public void ReceiveDamage(float damage)
+    {
+        _currentHealth -= damage;
+    }
+
     private void PerformAction()
     {
+        var action = _possibleActions.FirstOrDefault(a => a.Id == Configuration.ActionName);
+        var target = EntityController.EnemyEntities.FirstOrDefault();
+        if (target == null)
+        {
+            return;
+        }
         
+        action.Execute(this, target);
     }
 }

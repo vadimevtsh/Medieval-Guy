@@ -1,6 +1,7 @@
 public class ConfigurationService
 {
     public IEntityProviderService EntityProviderService { get; private set; } = new EntityProviderService();
+    public IActionProviderService ActionProviderService { get; private set; } = new ActionProviderService();
     
     private IConfigurationLoader Loader { get; set; } = new ConfigurationLoader();
     
@@ -13,5 +14,6 @@ public class ConfigurationService
         }
         
         EntityProviderService.Initialize(Loader);
+        ActionProviderService.Initialize(Loader);
     }
 }

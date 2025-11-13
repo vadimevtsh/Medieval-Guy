@@ -15,6 +15,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
     public static List<string> OverridesVariants => _overridesVariants;
     
     public ConfigurationGroupProxy<EntityConfiguration> EntityGroup { get; private set; }
+    public ConfigurationGroupProxy<BaseActionConfiguration> ActionGroup { get; private set; }
     
     public ConfigurationLoader() 
     {
@@ -40,6 +41,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
         LoadConfiguration<IConfiguration>(defaultConfigPath);
 
         EntityGroup = new ConfigurationGroupProxy<EntityConfiguration>(RootConfigurationPath, DefaultConfigurationPath, "Entities");
+        ActionGroup = new ConfigurationGroupProxy<BaseActionConfiguration>(RootConfigurationPath, DefaultConfigurationPath, "Actions");
     }
   
     public void InitializeOverride(string overrideConfigurationPath) 
@@ -48,6 +50,7 @@ public class ConfigurationLoader : ConfigurationProxy, IConfigurationLoader
         LoadConfiguration<IConfiguration>(overridenPath);
 
         EntityGroup.LoadOverride(overrideConfigurationPath);
+        ActionGroup.LoadOverride(overrideConfigurationPath);
     }
 
     public T Get<T>() where T : IConfiguration 

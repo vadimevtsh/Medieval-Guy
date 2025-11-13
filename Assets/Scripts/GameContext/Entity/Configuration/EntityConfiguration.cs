@@ -8,6 +8,7 @@ public class EntityConfiguration : ScriptableObject, IConfiguration
 {
     public string Id;
     public string SpriteName;
+    public string ActionName;
     public List<StatEntry> Stats = new();
     
     private void OnValidate()

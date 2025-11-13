@@ -9,20 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba913d4e810857e46b1b4da6b0d4fd5d, type: 3}
-  m_Name: Mage
+  m_Script: {fileID: 11500000, guid: 89644c04f2be4d2469ad76d2471ab1e1, type: 3}
+  m_Name: ActionsLibrary
   m_EditorClassIdentifier: 
-  Id: Mage
-  SpriteName: MageSprite
-  ActionName: Attack
-  Stats:
-  - Type: 0
-    Value: 5
-  - Type: 1
-    Value: 8
-  - Type: 2
-    Value: 10
-  - Type: 3
-    Value: 5
-  - Type: 4
-    Value: 5
+  ActionsData:
+  - {fileID: 11400000, guid: 604e441e1d1142d4495fda72ab9036f3, type: 2}
