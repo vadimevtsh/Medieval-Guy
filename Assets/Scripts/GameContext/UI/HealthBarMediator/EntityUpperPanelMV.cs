@@ -16,5 +16,6 @@ public class EntityUpperPanelMV : MonoBehaviour
     public void Update()
     {
         _actionSlider.normalizedValue = EntityObject.Entity.NormalizedActionValue;
+        _healthBarSlider.normalizedValue = EntityObject.Entity.NormalizedHealth;
     }
 }

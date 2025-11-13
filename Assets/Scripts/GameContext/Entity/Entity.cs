@@ -6,16 +6,20 @@ public class Entity : IStatProvider
     
     private readonly List<IStatModifier> _modifiers = new();
     
+    private float _actionTime;
+    private float _currentHealth;
+    
     public EntityConfiguration Configuration { get; private set;}
     public int SlotIndex { get; private set; }
     public float NormalizedActionValue => _actionTime / PerformActionTime;
-
-    private float _actionTime;
+    public float NormalizedHealth => _currentHealth / GetStat(StatType.MaxHealth);
 
     public void Initialize(EntityConfiguration configuration, int slotIndex)
     {
         Configuration = configuration;
         SlotIndex = slotIndex;
+        
+        _currentHealth = GetStat(StatType.MaxHealth);
     }
     
     public float GetStat(StatType type)

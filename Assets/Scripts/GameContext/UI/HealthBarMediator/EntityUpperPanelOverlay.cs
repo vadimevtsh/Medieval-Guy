@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityUpperPanelOverlay : UITogglableOverlay
 {
-    private static Vector3 Offset = new(0, 150, 0);
+    private static Vector3 Offset = new(0, 250, 0);
     
     [SerializeField] private EntityUpperPanelMV _upperPanelPrefab;
 

@@ -34,7 +34,7 @@ public class StatEntry
 
 public enum StatType
 {
-    Health,
+    MaxHealth,
     Damage,
     Defense,
     CritChance,
