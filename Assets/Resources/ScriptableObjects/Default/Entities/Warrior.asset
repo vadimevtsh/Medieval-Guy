@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6b302134d0943468e7034ef7af0592, type: 3}
-  m_Name: EntityLibrary
+  m_Script: {fileID: 11500000, guid: ba913d4e810857e46b1b4da6b0d4fd5d, type: 3}
+  m_Name: Warrior
   m_EditorClassIdentifier: 
-  EntityData:
-  - {fileID: 11400000, guid: 3b717840fa8b0ae4b9b1f9b5725f3c84, type: 2}
-  - {fileID: 11400000, guid: ce4b04edf8a2c104eaee20aa9504fec7, type: 2}
+  Id: Warrior
+  SpriteName: WarriorSprite

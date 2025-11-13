@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityUpperPanelOverlay : UITogglableOverlay
 {
-    private static Vector3 Offset = new Vector3(0, 150, 0);
+    private static Vector3 Offset = new(0, 150, 0);
     
     [SerializeField] private EntityUpperPanelMV _upperPanelPrefab;
 
@@ -40,7 +40,7 @@ public class EntityUpperPanelOverlay : UITogglableOverlay
                 upperPanel.Initialize(entity);
                 
                 var position = CameraService.MainCamera.WorldToScreenPoint(entity.gameObject.transform.position) + Offset;
-                var rect = upperPanel.gameObject.transform.position = position;
+                upperPanel.gameObject.transform.position = position;
                 
                 _upperPanels.Add(upperPanel);
             }
